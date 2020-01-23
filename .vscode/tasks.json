@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "Sanity Studio",
+        "type": "shell",
+        "command": "cd studio && yarn start",
+        "problemMatcher": [],
+        "presentation": {
+            "group": "Sanity",
+            "reveal": "always",
+            "panel": "new",
+            "showReuseMessage": false
+        }
+    },
+    {
+        "label": "Sanity Site",
+        "type": "shell",
+        "command": "cd site && yarn start",
+        "problemMatcher": [],
+        "presentation": {
+            "group": "Sanity",
+            "reveal": "always",
+            "panel": "new",
+            "showReuseMessage": false
+        }
+    },
+    {
+        "label": "Sanity: Run All",
+        "type": "shell",
+        "command": "echo Sanity Task Complete",
+        "problemMatcher": [],
+        "isBackground": true,
+        "presentation": {
+            "group": "Sanity",
+            "reveal": "never"
+        },
+        "dependsOn": [
+            "Sanity Studio",
+            "Sanity Site"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
+    }
+]
+}

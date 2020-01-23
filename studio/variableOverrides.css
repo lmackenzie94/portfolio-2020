@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+:root {
+  /* Brand colors */
+  --brand-primary: #d43737;
+  --brand-primary--inverted: #ffffff;
+  --brand-secondary: #0a0a0a;
+  --brand-tertiary: #17223b;
+  /* Typography */
+  --font-family-sans-serif: 'Calibre-Medium';
+  --font-family-serif: 'Larish';
+  --font-size-base: 15px;
+  --text-color: var(--brand-secondary);
+  /* Main Navigation */
+  --main-navigation-color: var(--brand-tertiary);
+  --main-navigation-color--inverted: var(--brand-primary--inverted);
+}
+
+

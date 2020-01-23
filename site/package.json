@@ -1,0 +1,96 @@
+{
+  "name": "site",
+  "private": true,
+  "description": "My portfolio site built with Sanity and Gatsby",
+  "version": "1.0.2",
+  "author": "Luke M.",
+  "dependencies": {
+    "@campj/utils": "^1.1.4",
+    "@emotion/core": "^10.0.17",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.5",
+    "@hot-loader/react-dom": "^16.11.0",
+    "@lmack/core": "^1.0.0",
+    "@lmack/hooks": "^1.0.1",
+    "@lmack/sanity-heroku-preview": "^1.0.0",
+    "@mdx-js/react": "^1.5.0",
+    "@sanity/block-content-to-react": "^2.0.7",
+    "css-vars-ponyfill": "^2.1.2",
+    "dotenv": "^8.1.0",
+    "gatsby": "^2.15.20",
+    "gatsby-image": "^2.2.20",
+    "gatsby-plugin-google-analytics": "^2.1.33",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.2.18",
+    "gatsby-plugin-offline": "^3.0.8",
+    "gatsby-plugin-preact": "^3.1.25",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-theme-ui": "^0.2.43",
+    "gatsby-source-sanity": "^5.0.2",
+    "hoist-non-react-statics": "^3.3.1",
+    "polished": "^3.4.1",
+    "preact": "^10.2.1",
+    "prismjs": "^1.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "react-spring": "^8.0.27",
+    "react-three-fiber": "^3.0.7",
+    "theme-ui": "^0.2.43",
+    "three": "^0.109.0"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
+    "axe-core": "^3.4.1",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-prismjs": "^1.1.1",
+    "babel-preset-gatsby": "^0.2.20",
+    "cypress": "^3.8.2",
+    "cypress-axe": "^0.5.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-cypress": "^2.8.1",
+    "eslint-plugin-react": "^7.17.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.8",
+    "husky": "^4.0.9",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.18.2",
+    "start-server-and-test": "^1.10.6"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn test && gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "test": "jest",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}

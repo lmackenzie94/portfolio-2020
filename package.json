@@ -1,0 +1,21 @@
+{
+  "name": "sanity-portfolio",
+  "private": true,
+  "workspaces": [
+    "site",
+    "studio"
+  ],
+  "scripts": {
+    "graphql": "cd studio && sanity graphql deploy --playground"
+  },
+  "devDependencies": {
+    "gatsby-cli": "^2.7.54",
+    "lerna": "^3.16.4"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "@campj/utils": "^1.0.14"
+  }
+}
