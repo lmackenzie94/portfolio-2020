@@ -15,6 +15,7 @@ function Container({children}) {
           border: `2px solid`,
           borderColor: `grey`,
           borderRadius: 3,
+          background: `brightWhite`,
           overflow: `hidden`,
         }}
       >
