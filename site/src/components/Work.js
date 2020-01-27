@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
 import {Wrapper, Section, SectionHeading} from '../system'
-import Accordion from './Accordion'
+import Accordion from '@lmack/accordion'
+import '@lmack/accordion/styles.css'
 import AccordionContent from './Accordion/Content'
 import AccordionButton from './Accordion/Button'
 import AccordionContainer from './Accordion/Container'
