@@ -83,6 +83,9 @@ export default {
     },
     {
       type: 'textwithimage'
+    },
+    {
+      type: 'code'
     }
   ]
 };

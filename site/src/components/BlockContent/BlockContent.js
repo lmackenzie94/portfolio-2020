@@ -21,6 +21,11 @@ const serializers = {
     },
     gallery: GalleryBlockSerializer,
     textwithimage: TextWithImageSerializer,
+    code: ({node}) => (
+      <pre data-language={node.language} className="line-numbers">
+        <code className="language-javascript">{node.code}</code>
+      </pre>
+    ),
     mainImage: ({node}) => (
       <div
         sx={{
