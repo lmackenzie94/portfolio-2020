@@ -30,26 +30,12 @@ const Layout = ({children, siteTitle}) => {
   useEffect(() => {
     // You can call the Prism.js API here
     // Use setTimeout to push onto callback queue so it runs after the DOM is updated
-    Prism.highlightAll()
+    setTimeout(() => Prism.highlightAll(), 0)
   }, [])
 
   useEffect(() => {
     sessionStorage.setItem('fontSizeIdx', `${fontSizeIdx}`)
   }, [fontSizeIdx])
-
-  // const handleScreenResize = () => {
-  //   if (fontSizeIdx === 2) return;
-  //   if (window.innerWidth < 400) {
-  //     setFontSizeIdx(currentSize => currentSize - 1);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', handleScreenResize);
-  //   return () => {
-  //     window.removeEventListener('resize', handleScreenResize);
-  //   };
-  // }, []);
 
   return (
     <GlobalProvider value={{locale, localePrefix, fontSizeIdx}}>
