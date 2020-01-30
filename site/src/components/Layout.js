@@ -31,7 +31,7 @@ const Layout = ({children, siteTitle}) => {
     // You can call the Prism.js API here
     // Use setTimeout to push onto callback queue so it runs after the DOM is updated
     Prism.highlightAll()
-  })
+  }, [])
 
   useEffect(() => {
     sessionStorage.setItem('fontSizeIdx', `${fontSizeIdx}`)
