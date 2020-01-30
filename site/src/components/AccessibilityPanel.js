@@ -38,7 +38,6 @@ function AccessibilityPanel({
   const [open, setOpen] = useState(false)
   // set to 300 so it's off screen to start
   const [panelWidth, setPanelWidth] = useState(300)
-  const [userColor, setUserColor] = useState()
   const panelRef = useRef()
 
   const IncreaseFontSize = () => {
