@@ -121,11 +121,11 @@ export default ({data}) => {
   // const blocks = data.post.blockstack ? data.post.blockstack.blocks : undefined
 
   // // for syntax highlighting
-  // useEffect(() => {
-  //   // You can call the Prism.js API here
-  //   // Use setTimeout to push onto callback queue so it runs after the DOM is updated
-  //   setTimeout(() => Prism.highlightAll(), 0)
-  // }, [])
+  useEffect(() => {
+    // You can call the Prism.js API here
+    // Use setTimeout to push onto callback queue so it runs after the DOM is updated
+    setTimeout(() => Prism.highlightAll(), 0)
+  }, [])
 
   return (
     <Layout>
