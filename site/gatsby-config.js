@@ -62,7 +62,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -72,13 +72,13 @@ module.exports = {
         head: false,
       },
     },
-    {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        // production: true,
-        defaultSizes: `gzip`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+    //   options: {
+    //     // production: true,
+    //     defaultSizes: `gzip`,
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

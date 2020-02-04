@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {Global, css} from '@emotion/core'
-import Prism from 'prismjs'
-
 import Header from './Header'
 import './layout.css'
 import AccessibilityPanel from './AccessibilityPanel'
@@ -24,13 +22,6 @@ const Layout = ({children, siteTitle}) => {
     if (sessionStorage.fontSizeIdx) {
       setFontSizeIdx(parseInt(sessionStorage.fontSizeIdx))
     }
-  }, [])
-
-  // for syntax highlighting
-  useEffect(() => {
-    // You can call the Prism.js API here
-    // Use setTimeout to push onto callback queue so it runs after the DOM is updated
-    setTimeout(() => Prism.highlightAll(), 0)
   }, [])
 
   useEffect(() => {

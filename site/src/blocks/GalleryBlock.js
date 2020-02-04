@@ -1,18 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import React from "react"
-import Image from "gatsby-image"
-import { Section } from "../system"
-import { getFluidGatsbyImage } from "gatsby-source-sanity"
-import { buildImageObj } from "../lib/helpers"
-import { imageUrlFor } from "../lib/image-url"
+import {jsx} from 'theme-ui'
+import React from 'react'
+import Image from 'gatsby-image'
+import {Section} from '../system'
+import {getFluidGatsbyImage} from 'gatsby-source-sanity'
+import {buildImageObj} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
 
-function GalleryBlock({ data }) {
-  console.log("GalleryBlock", data)
-  const { images } = data
+function GalleryBlock({data}) {
+  const {images} = data
   return (
     <Section>
-      <div sx={{ display: `flex`, justifyContent: `center` }}>
+      <div sx={{display: `flex`, justifyContent: `center`}}>
         {images.map(image => (
           <div
             key={image.caption}
@@ -30,7 +29,7 @@ function GalleryBlock({ data }) {
               alt={image.caption}
               title={image.caption}
             />
-            <h4 sx={{ my: 10 }}>{image.caption}</h4>
+            <h4 sx={{my: 10}}>{image.caption}</h4>
           </div>
         ))}
       </div>
@@ -39,12 +38,12 @@ function GalleryBlock({ data }) {
 }
 
 // used in serializers.js
-export function GalleryBlockSerializer({ node }) {
-  const { images } = node
+export function GalleryBlockSerializer({node}) {
+  const {images} = node
 
   return (
     <Section>
-      <div sx={{ display: `flex`, justifyContent: `center` }}>
+      <div sx={{display: `flex`, justifyContent: `center`}}>
         {images.map(image => {
           return (
             <div
@@ -60,14 +59,14 @@ export function GalleryBlockSerializer({ node }) {
             >
               {image.asset && (
                 <>
-                  <div sx={{ flex: `0 0 50%` }}>
+                  <div sx={{flex: `0 0 50%`}}>
                     <img
                       src={imageUrlFor(buildImageObj(image))}
                       alt={image.alt}
-                      sx={{ borderRadius: `10px` }}
+                      sx={{borderRadius: `10px`}}
                     />
                   </div>
-                  <h4 sx={{ my: 10 }}>{image.caption}</h4>
+                  <h4 sx={{my: 10}}>{image.caption}</h4>
                 </>
               )}
             </div>

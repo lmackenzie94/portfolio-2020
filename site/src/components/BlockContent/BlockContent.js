@@ -6,6 +6,8 @@ import {GalleryBlockSerializer} from '../../blocks/GalleryBlock'
 import {TextWithImageSerializer} from '../../blocks/TextWithImageBlock'
 import {buildImageObj} from '../../lib/helpers'
 import {imageUrlFor} from '../../lib/image-url'
+import {PrismCode} from '../PrismCode'
+// import { CodeSerializer } from '../../blocks/Code'
 
 const serializers = {
   types: {

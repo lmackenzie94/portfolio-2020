@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import {useEffect} from 'react'
 import {jsx} from 'theme-ui'
 import {graphql, Link} from 'gatsby'
 import Layout from '../containers/Layout'
@@ -11,6 +12,7 @@ import SEO from '../components/seo'
 import BlockContent from '../components/BlockContent/BlockContent'
 // import { buildImageObj } from '../lib/helpers';
 // import { imageUrlFor } from '../lib/image-url';
+import Prism from 'prismjs'
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
@@ -118,6 +120,13 @@ export default ({data}) => {
 
   // const blocks = data.post.blockstack ? data.post.blockstack.blocks : undefined
 
+  // // for syntax highlighting
+  // useEffect(() => {
+  //   // You can call the Prism.js API here
+  //   // Use setTimeout to push onto callback queue so it runs after the DOM is updated
+  //   setTimeout(() => Prism.highlightAll(), 0)
+  // }, [])
+
   return (
     <Layout>
       <SEO title="Blog" />
@@ -165,7 +174,13 @@ export default ({data}) => {
           {_rawBlockcontent && <BlockContent blocks={_rawBlockcontent || []} />}
           {/* BLOCKS */}
           {/* {blocks && blocks.map(block => renderBlock(block))} */}
-          <Link to="/" sx={{variant: `buttons.primary`, mt: [3, 3, 4]}}>
+          <Link
+            to="/"
+            sx={{
+              variant: `buttons.primary`,
+              mt: [3, 3, 4],
+            }}
+          >
             Back Home
           </Link>
         </Section>
