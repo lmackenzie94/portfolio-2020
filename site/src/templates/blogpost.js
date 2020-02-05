@@ -4,7 +4,7 @@ import {jsx} from 'theme-ui'
 import {graphql, Link} from 'gatsby'
 import Layout from '../containers/Layout'
 import {Wrapper, Section, Divider} from '../system/index'
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
 import BlockContent from '../components/BlockContent'
 import Prism from 'prismjs'
 

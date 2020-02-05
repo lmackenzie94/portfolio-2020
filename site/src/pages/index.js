@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
 import Layout from '../containers/Layout.js'
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
 import {graphql} from 'gatsby'
 import Work from '../components/Work'
 import Hero from '../components/Hero'
@@ -84,18 +84,6 @@ export const query = graphql`
               }
             }
           }
-        }
-      }
-    }
-    notes: allSanityNote {
-      edges {
-        node {
-          title
-          slug {
-            current
-          }
-          published
-          topic
         }
       }
     }

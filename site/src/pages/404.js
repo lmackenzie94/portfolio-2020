@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../containers/Layout.js'
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
 import {graphql} from 'gatsby'
 import {withGlobal} from '../global/index.js'
 import {Wrapper, Section} from '../system/index.js'
