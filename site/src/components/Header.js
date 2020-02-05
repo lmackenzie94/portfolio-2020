@@ -4,11 +4,8 @@ import {Link} from 'gatsby'
 import ThemeToggle from './ThemeToggle'
 import {Wrapper} from '../system/index'
 import {withGlobal} from '../global'
-// import { smoothScrollTo } from '@campj/utils/scroll';
 
-// const navItems = ['Work', 'Blog', 'Notes'];
-
-const Header = ({locale, setLocale, siteTitle, fontSizeIdx}) => {
+const Header = ({siteTitle, fontSizeIdx}) => {
   return (
     <header
       role="banner"

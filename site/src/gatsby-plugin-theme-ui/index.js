@@ -190,21 +190,6 @@ const theme = {
         color: `primary`,
       },
     },
-    localeToggle: {
-      ...baseButton,
-      px: 0,
-      py: 0,
-      minWidth: 50,
-      fontSize: [1, 1, 2],
-      fontFamily: `heading`,
-      fontWeight: `bold`,
-      bg: `transparent`,
-      color: `text`,
-      textDecoration: `none`,
-      ':hover, :focus': {
-        color: `primary`,
-      },
-    },
     accessibilityPanel: {
       position: `absolute`,
       top: 0,

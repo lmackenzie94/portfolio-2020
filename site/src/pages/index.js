@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
-import React from 'react'
 import Layout from '../containers/Layout.js'
-import SEO from '../components/seo'
-import {Link, graphql} from 'gatsby'
+import SEO from '../components/SEO'
+import {graphql} from 'gatsby'
 import Work from '../components/Work'
 import Hero from '../components/Hero'
-import Blog from '../components/Blog'
+import BlogList from '../components/BlogList'
 
 // import Notes from '../components/Notes.js';
 
@@ -15,8 +14,7 @@ const IndexPage = ({data}) => (
     <SEO title="Home" />
     <Hero data={data.page} />
     <Work projects={data.projects} />
-    <Blog posts={data.posts} />
-    {/* <Notes notes={data.notes} /> */}
+    <BlogList posts={data.posts} />
   </Layout>
 )
 

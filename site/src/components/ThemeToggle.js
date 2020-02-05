@@ -1,7 +1,5 @@
 /** @jsx jsx */
 import {jsx, useColorMode} from 'theme-ui'
-// import { ReactComponent as MoonIcon } from "../icons/moon.svg"
-// import { ReactComponent as SunIcon } from "../icons/sun.svg"
 import Moon from '../icons/Moon'
 import Sun from '../icons/Sun'
 import theme from '../gatsby-plugin-theme-ui/index'

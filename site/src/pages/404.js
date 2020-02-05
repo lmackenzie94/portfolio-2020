@@ -1,20 +1,20 @@
-import React from 'react';
-import Layout from '../containers/Layout.js';
-import SEO from '../components/seo';
-import { graphql } from 'gatsby';
-import { withGlobal } from '../global/index.js';
-import { Wrapper, Section } from '../system/index.js';
+import React from 'react'
+import Layout from '../containers/Layout.js'
+import SEO from '../components/SEO'
+import {graphql} from 'gatsby'
+import {withGlobal} from '../global/index.js'
+import {Wrapper, Section} from '../system/index.js'
 
 export const query = graphql`
   {
-    page: sanityPage(slug: { current: { eq: "404" } }) {
+    page: sanityPage(slug: {current: {eq: "404"}}) {
       title
       _rawParagraph
     }
   }
-`;
+`
 
-const NotFoundPage = ({ data }) => (
+const NotFoundPage = ({data}) => (
   <Layout>
     <Wrapper>
       <Section>
@@ -24,6 +24,6 @@ const NotFoundPage = ({ data }) => (
       </Section>
     </Wrapper>
   </Layout>
-);
+)
 
-export default withGlobal(NotFoundPage);
+export default withGlobal(NotFoundPage)

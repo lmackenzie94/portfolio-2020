@@ -66,8 +66,6 @@ function AccessibilityPanel({
     lineHeight: `30px`,
   }
 
-  // const userColor = useRef()
-
   useEffect(() => {
     if (colorMode !== `highContrast`) {
       sessionStorage.setItem('colorMode', colorMode)

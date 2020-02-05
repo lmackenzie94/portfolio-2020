@@ -10,9 +10,8 @@ import {
 import {faEnvelope, faFile} from '@fortawesome/free-solid-svg-icons'
 import {Wrapper, Section, Divider} from '../system/index'
 import {withGlobal} from '../global'
-import BlockContent from './BlockContent/BlockContent'
+import BlockContent from './BlockContent'
 import {OutboundLink} from 'gatsby-plugin-google-analytics'
-// import {useSpring, a} from 'react-spring'
 
 const getSocialIcon = platform => {
   switch (platform) {
@@ -33,13 +32,7 @@ const getSocialIcon = platform => {
   }
 }
 
-function Hero({data, theme}) {
-  // const spring = useSpring({
-  //   from: {opacity: 0, transform: 'translate3d(0px,10px,0px)'},
-  //   opacity: 1,
-  //   transform: 'translate3d(0px,0px,0px)',
-  // })
-
+function Hero({data}) {
   return (
     <Wrapper>
       <Section

@@ -1,11 +1,8 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
 import BaseBlockContent from '@sanity/block-content-to-react'
-import React from 'react'
-import {GalleryBlockSerializer} from '../../blocks/GalleryBlock'
-import {TextWithImageSerializer} from '../../blocks/TextWithImageBlock'
-import {buildImageObj} from '../../lib/helpers'
-import {imageUrlFor} from '../../lib/image-url'
+import {buildImageObj} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
 
 const serializers = {
   types: {
@@ -19,8 +16,6 @@ const serializers = {
           return <p>{props.children}</p>
       }
     },
-    gallery: GalleryBlockSerializer,
-    textwithimage: TextWithImageSerializer,
     code: ({node}) => (
       <pre data-language={node.language} className="line-numbers">
         <code className="language-javascript">{node.code}</code>
