@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `@lmack/sanity-heroku-preview`,
       options: {
-        herokuAppName: `sanity-portfolio`,
+        herokuAppName: `lukemackenzie-portfolio`,
         datasetToUse: process.env.DATASET,
       },
     },
