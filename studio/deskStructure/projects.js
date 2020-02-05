@@ -15,7 +15,7 @@ import TextToSpeechPreview from '../components/previews/a11y/text-to-speech/Text
 // import BraillePreview from '../components/previews/a11y/braille/Braille'
 
 // Web preview configuration
-const remoteURL = 'https://sanity-portfolio.herokuapp.com';
+const remoteURL = 'https://lukemackenzie-portfolio.herokuapp.com';
 const localURL = 'http://localhost:8000';
 const previewURL =
   window.location.hostname === 'localhost' ? localURL : remoteURL;
