@@ -32,6 +32,7 @@
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-source-sanity": "^5.0.2",
     "hoist-non-react-statics": "^3.3.1",
+    "logrocket": "^1.0.6",
     "polished": "^3.4.1",
     "preact": "^10.2.1",
     "prismjs": "^1.17.1",

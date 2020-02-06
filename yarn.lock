@@ -11695,6 +11695,11 @@ loglevelnext@^1.0.1:
     es6-symbol "^3.1.1"
     object.assign "^4.1.0"
 
+logrocket@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-1.0.6.tgz#6f12511ad69ba3ca2032295f278ef350230e2902"
+  integrity sha512-uIi0F+s44AtuJocUAW019SYKsPnnV/IB3IRsL0LFYY4fAfjGQjpcpxXt80yPpkBQkoHW1h5wHYoixs8ZU1MPZg==
+
 lokijs@^1.5.8:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/lokijs/-/lokijs-1.5.8.tgz#9296f288edb2147389ec692fc972c428c59179d1"
