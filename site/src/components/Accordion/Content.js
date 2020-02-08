@@ -28,8 +28,7 @@ function Content({data, loadImage}) {
       {data._rawDescription && (
         <BlockContent blocks={data._rawDescription || []} />
       )}
-      <Link
-        to={`/${data.slug.current}`}
+      <div
         sx={{
           display: `block`,
           width: `100%`,
@@ -50,7 +49,7 @@ function Content({data, loadImage}) {
             borderRadius: 5,
           }}
         />
-      </Link>
+      </div>
       {data.imageSecondary && (
         <Image
           fluid={data.imageSecondary.asset.fluid}

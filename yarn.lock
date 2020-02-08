@@ -2222,10 +2222,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@lmack/accordion@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@lmack/accordion/-/accordion-1.0.3.tgz#e8e46265c40a2f0eb07f5441d0668078d80caee1"
-  integrity sha512-P/gtH3bfJQFkiDmYwvH8qrCTfpH6h+KMcQWjnqgvn1kcCnks/Q8gvEjMZl1RjJsV00NaDIBeCAuAR3rp/Gn+sA==
+"@lmack/accordion@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@lmack/accordion/-/accordion-1.0.4.tgz#da8ed37bf0f7109e609ef2f5e62934fc315a1439"
+  integrity sha512-Dbo5cjRgfIX01v6qfanOf8204aDOAy6RWIebdksTuFfa1Gh1NI+bajuyRquXSA5OGIlE0EnhZnbdFHW2Pbaf2g==
   dependencies:
     "@campj/utils" "^1.1.4"
     react "^16.12.0"

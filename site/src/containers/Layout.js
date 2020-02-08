@@ -15,7 +15,6 @@ function LayoutContainer(props) {
     <StaticQuery
       query={query}
       render={data => {
-        console.log(data)
         return (
           <Layout {...props} siteTitle={data.site.displayTitle || 'luke.'} />
         )

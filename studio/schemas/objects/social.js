@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const getSocialIcon = platform => {
   switch (platform) {
     case 'Twitter':
-      console.log(faTwitter);
       return faTwitter;
     case 'Github':
       return faGithub;
