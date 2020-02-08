@@ -1,6 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder';
 
-import projects from './projects';
 import siteSettings from './siteSettings';
 import pages from './pages';
 import posts from './posts';
@@ -9,18 +8,16 @@ import JSONpreview from '../components/previews/json/JSONpreview';
 
 // Hide document types that we already have a structure definition for
 const hiddenDocTypes = listItem =>
-  !['project', 'siteSettings', 'page', 'post'].includes(listItem.getId());
+  !['siteSettings', 'page', 'post'].includes(listItem.getId());
 
 export default () =>
   S.list()
     .title('Content')
     .items([
       siteSettings,
-      S.divider(),
       pages,
       S.divider(),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
-      projects,
       posts
     ]);
 

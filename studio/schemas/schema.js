@@ -26,8 +26,8 @@ export default createSchema({
     // The following are document types which will appear in the studio.
     // they will appear in this order.
     siteSettings,
-    project,
     author,
+    project,
     post,
     page,
     blockContent,
