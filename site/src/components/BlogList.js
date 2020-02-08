@@ -4,7 +4,7 @@ import {Wrapper, Section} from '../system'
 import {withGlobal} from '../global'
 import BlogListItem from './BlogListItem'
 
-const Blog = ({posts}) => {
+const BlogList = ({posts}) => {
   return (
     <Wrapper id="Blog">
       <Section>
@@ -28,4 +28,4 @@ const Blog = ({posts}) => {
     </Wrapper>
   )
 }
-export default withGlobal(Blog)
+export default withGlobal(BlogList)

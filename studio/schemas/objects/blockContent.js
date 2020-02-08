@@ -1,20 +1,15 @@
-/**
- * This is the schema definition for the rich text fields used for
- * for this blog studio. When you import it in schemas.js it can be
- * reused in other parts of the studio with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
-
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
+import { FaHighlighter } from 'react-icons/fa';
 
-const highlightIcon = () => <span sx={{ fontWeight: `bold` }}>H</span>;
 const highlightRender = props => (
-  <span style={{ backgroundColor: 'yellow' }}>{props.children}</span>
+  <span style={{ backgroundColor: '#f5cbcb' }}>{props.children}</span>
+);
+
+const calloutRender = props => (
+  <div sx={{ pl: 15, borderLeft: `4px solid`, borderColor: `#d43737` }}>
+    {props.children}
+  </div>
 );
 
 export default {
@@ -35,10 +30,19 @@ export default {
         { title: 'H1', value: 'h1' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
-        { title: 'H4', value: 'h4' },
-        { title: 'Quote', value: 'blockquote' }
+        { title: 'Quote', value: 'blockquote' },
+        {
+          title: 'Callout',
+          value: 'callout',
+          blockEditor: {
+            render: calloutRender
+          }
+        }
       ],
-      lists: [{ title: 'Bullet', value: 'bullet' }],
+      lists: [
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Numbered', value: 'number' }
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -50,7 +54,7 @@ export default {
             title: 'Highlight',
             value: 'highlight',
             blockEditor: {
-              icon: highlightIcon,
+              icon: FaHighlighter,
               render: highlightRender
             }
           }
@@ -77,12 +81,6 @@ export default {
     // as a block type.
     {
       type: 'mainImage'
-    },
-    {
-      type: 'gallery'
-    },
-    {
-      type: 'textwithimage'
     },
     {
       type: 'code'

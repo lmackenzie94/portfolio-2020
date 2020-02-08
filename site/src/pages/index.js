@@ -7,8 +7,6 @@ import Work from '../components/Work'
 import Hero from '../components/Hero'
 import BlogList from '../components/BlogList'
 
-// import Notes from '../components/Notes.js';
-
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />

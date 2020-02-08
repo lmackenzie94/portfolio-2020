@@ -5,7 +5,7 @@ export const Wrapper = props => (
   <div
     {...props}
     sx={{
-      maxWidth: `1000px`,
+      maxWidth: `950px`,
       margin: `0 auto`,
       px: [3, 4, 5, 0],
       ...props.sx,

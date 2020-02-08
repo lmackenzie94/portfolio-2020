@@ -23,19 +23,25 @@ function SEO({description, keywords = [], lang, meta, title}) {
         if (!data.site) {
           return
         }
-        const metaDescription = description || data.site.description
+        const seo = {
+          title: data.site.title || `Luke MacKenzie | Web Developer`,
+          titleTemplate: `${title || ''} ${title ? '|' : ''} ${
+            data.site.displayTitle
+          }`,
+          description: description || data.site.description,
+        }
 
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
-            title={`${title || data.site.title} | ${data.site.displayTitle}`}
-            // titleTemplate={`%s | ${data.site.title}`}
+            title={seo.title}
+            titleTemplate={seo.titleTemplate}
             meta={[
               {
                 name: `description`,
-                content: metaDescription,
+                content: seo.description,
               },
               {
                 property: `og:title`,
@@ -43,7 +49,7 @@ function SEO({description, keywords = [], lang, meta, title}) {
               },
               {
                 property: `og:description`,
-                content: metaDescription,
+                content: seo.description,
               },
               {
                 property: `og:type`,
@@ -63,7 +69,7 @@ function SEO({description, keywords = [], lang, meta, title}) {
               },
               {
                 name: `twitter:description`,
-                content: metaDescription,
+                content: seo.description,
               },
             ]
               .concat(

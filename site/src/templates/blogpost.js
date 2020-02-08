@@ -51,44 +51,13 @@ export const query = graphql`
         }
         alt
       }
-      blockstack {
-        blocks {
-          __typename
-          ... on SanityGallery {
-            _key
-            _type
-            images {
-              caption
-              alt
-              asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
-          }
-          ... on SanityTextwithimage {
-            _key
-            _type
-            flip
-            text
-            image {
-              asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
-          }
-        }
-      }
       _rawBody(resolveReferences: {maxDepth: 5})
       _rawBlockcontent
     }
   }
 `
 
-export default ({data}) => {
+export default ({data, theme}) => {
   const {title, published, _rawBlockcontent} = data.post
 
   // // for syntax highlighting
@@ -102,19 +71,36 @@ export default ({data}) => {
     <Layout>
       <SEO title="Blog" />
       <Wrapper>
-        <Section>
-          <h1 sx={{variant: `text.subheading`}}>{title}</h1>
-          <p>
-            <span sx={{fontWeight: `bold`}}>Posted: </span>
-            {published}
-          </p>
+        <Section
+          sx={{
+            bg: `white`,
+            color: `black`,
+            p: [2, 3, 4],
+            mx: [-2, -3, -4],
+            borderRadius: 5,
+          }}
+        >
+          <h1 sx={{variant: `text.subheading`, color: `black`, mb: 15}}>
+            {title}
+          </h1>
+          <p>{published}</p>
+          {/* <span
+            sx={{
+              display: `block`,
+              width: `100%`,
+              height: 2,
+              backgroundColor: `primary`,
+            }}
+          ></span> */}
           <Divider style={{mb: [4]}} />
-          {_rawBlockcontent && <BlockContent blocks={_rawBlockcontent || []} />}
+          {_rawBlockcontent && (
+            <BlockContent blocks={_rawBlockcontent || []} theme={theme} />
+          )}
           <Link
             to="/"
             sx={{
               variant: `buttons.primary`,
-              mt: [3, 3, 4],
+              mt: [4, 4, 5],
             }}
           >
             Back Home

@@ -10,7 +10,8 @@ const cardStyles = {
   border: `2px solid`,
   borderColor: `grey`,
   borderRadius: 3,
-  p: 20,
+  py: 15,
+  px: [15, 20, 25],
   bg: `brightWhite`,
 }
 
@@ -32,6 +33,8 @@ const BlogListItem = ({idx, post}) => (
         display: `flex`,
         width: `100%`,
         alignItems: `center`,
+        justifyContent: `${idx % 2 === 0 ? `flex-start` : `space-between`}`,
+        flexDirection: `${idx % 2 === 0 ? `row` : `row-reverse`}`,
       }}
     >
       {post.image.asset && (
@@ -46,7 +49,8 @@ const BlogListItem = ({idx, post}) => (
             borderRadius: `50%`,
             flex: `0 0 100px`,
             height: `100px`,
-            mr: `25px`,
+            mr: `${idx % 2 === 0 ? `25px` : `0`}`,
+            ml: `${idx % 2 === 0 ? `0` : `25px`}`,
           }}
         />
       )}

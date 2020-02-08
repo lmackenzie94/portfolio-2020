@@ -8,10 +8,23 @@ const serializers = {
   types: {
     block(props) {
       switch (props.node.style) {
-        case 'h1':
-          return <h1 sx={{color: 'primary'}}>{props.children}</h1>
         case 'h2':
-          return <h2 sx={{color: 'darkblue'}}>{props.children}</h2>
+          return <h2 sx={{mt: 50}}>{props.children}</h2>
+        case 'h3':
+          return <h2 sx={{mt: 30}}>{props.children}</h2>
+        case 'callout':
+          return (
+            <div
+              sx={{
+                pl: 15,
+                my: 30,
+                borderLeft: `4px solid`,
+                borderColor: `primary`,
+              }}
+            >
+              {props.children}
+            </div>
+          )
         default:
           return <p>{props.children}</p>
       }
@@ -47,12 +60,15 @@ const serializers = {
   },
   marks: {
     highlight: props => (
-      <span sx={{backgroundColor: `yellow`}}>{props.children}</span>
+      <span sx={{backgroundColor: `#ffe0e0`}}>{props.children}</span>
     ),
     link: props => {
       const {children, mark} = props
       return (
-        <a href={mark.href} sx={{color: `primary`}}>
+        <a
+          href={mark.href}
+          sx={{color: `primary`, ':hover, :focus': {textDecoration: `none`}}}
+        >
           {children}
         </a>
       )

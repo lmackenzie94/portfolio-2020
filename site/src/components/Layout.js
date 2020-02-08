@@ -65,7 +65,7 @@ const Layout = ({children, siteTitle}) => {
             fontFamily: useAccessibleFont
               ? accessibleFontStack
               : theme.fonts.body,
-            lineHeight: `1.45em`,
+            lineHeight: `1.6`,
             fontSize: theme.fontSizes[fontSizeIdx],
           },
           h1: {

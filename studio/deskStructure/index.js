@@ -1,8 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder';
 
-// import ads from './ads';
-// import categories from './categories';
-// import person from './person';
 import projects from './projects';
 import siteSettings from './siteSettings';
 import pages from './pages';
@@ -22,10 +19,6 @@ export default () =>
       pages,
       S.divider(),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
-      // siteSettings
-      //   person,
-      //   ads,
-      //   categories,
       projects
     ]);
 

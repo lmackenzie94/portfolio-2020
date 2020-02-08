@@ -20,12 +20,7 @@ export default {
         maxLength: 96
       }
     },
-    // {
-    //   name: 'author',
-    //   title: 'Author',
-    //   type: 'reference',
-    //   to: { type: 'author' }
-    // },
+
     {
       name: 'authors',
       title: 'Author(s)',
@@ -43,17 +38,7 @@ export default {
       title: 'Image',
       type: 'mainImage'
     },
-    {
-      name: 'gallery',
-      title: 'Image Gallery',
-      type: 'gallery'
-    },
-    // {
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}]
-    // },
+
     {
       name: 'published',
       title: 'Published',
@@ -62,33 +47,9 @@ export default {
         dateFormat: 'MMMM D, YYYY'
       }
     },
-
-    // {
-    //   name: 'blockcontent',
-    //   title: 'CONTENT!!',
-    //   type: 'blockContent'
-    // }
-    // {
-    //   name: 'code',
-    //   title: 'Code Block',
-    //   type: 'code',
-    //   options: {
-    //     language: 'js'
-    //   }
-    // },
-    {
-      name: 'body',
-      title: 'Text',
-      type: 'bodyPortableText'
-    },
-    {
-      name: 'blockstack',
-      title: 'Block Stack',
-      type: 'block-stack'
-    },
     {
       name: 'blockcontent',
-      title: 'Block Content',
+      title: 'Post Text',
       type: 'blockContent'
     }
   ],
