@@ -73,6 +73,7 @@ const serializers = {
         </a>
       )
     },
+    pre: props => <span sx={{fontFamily: `monospace`}}>{props.children}</span>,
   },
 }
 

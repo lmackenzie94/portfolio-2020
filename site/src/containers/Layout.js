@@ -15,7 +15,10 @@ function LayoutContainer(props) {
     <StaticQuery
       query={query}
       render={data => {
-        return <Layout {...props} siteTitle={data.site.displayTitle} />
+        console.log(data)
+        return (
+          <Layout {...props} siteTitle={data.site.displayTitle || 'luke.'} />
+        )
       }}
     />
   )

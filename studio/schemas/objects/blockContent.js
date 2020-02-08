@@ -12,6 +12,12 @@ const calloutRender = props => (
   </div>
 );
 
+const preIcon = () => <span>Pre</span>;
+
+const preRender = props => (
+  <span sx={{ fontFamily: `monospace` }}>{props.children}</span>
+);
+
 export default {
   title: 'Block Content',
   name: 'blockContent',
@@ -56,6 +62,14 @@ export default {
             blockEditor: {
               icon: FaHighlighter,
               render: highlightRender
+            }
+          },
+          {
+            title: 'Pre',
+            value: 'pre',
+            blockEditor: {
+              icon: preIcon,
+              render: preRender
             }
           }
         ],

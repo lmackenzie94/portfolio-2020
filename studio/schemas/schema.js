@@ -11,7 +11,6 @@ import page from './documents/page';
 import author from './documents/author';
 import project from './documents/project';
 import authorReference from './objects/authorReference';
-import { localeString, localeText } from './objects/localeObjects';
 import mainImage from './objects/mainImage';
 import siteSettings from './documents/siteSettings';
 import social from './objects/social';
@@ -32,8 +31,6 @@ export default createSchema({
     page,
     blockContent,
     authorReference,
-    localeString,
-    localeText,
     mainImage,
     social
   ])
