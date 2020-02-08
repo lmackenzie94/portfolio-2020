@@ -44,14 +44,6 @@ export default {
       type: 'reference',
       to: { type: 'author' }
     },
-    // {
-    //   name: 'dateCreated',
-    //   title: 'Creation Date',
-    //   type: 'date',
-    //   options: {
-    //     dateFormat: 'MMM D, YYYY'
-    //   }
-    // },
     {
       name: 'url',
       title: 'URL',
@@ -84,15 +76,11 @@ export default {
       }
     }
   ],
-
-  // this declares the preview info we want to see for each project
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      // image references the 'image' name above
       media: 'image'
-      // date: 'dateCreated'
     }
     // prepare(selection) {
     //   const { author, date } = selection;

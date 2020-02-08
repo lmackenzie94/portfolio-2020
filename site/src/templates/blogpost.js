@@ -51,7 +51,6 @@ export const query = graphql`
         }
         alt
       }
-      _rawBody(resolveReferences: {maxDepth: 5})
       _rawBlockcontent
     }
   }
