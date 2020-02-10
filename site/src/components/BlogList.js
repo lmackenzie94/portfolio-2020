@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import {useState, useRef, useEffect} from 'react'
 import {jsx} from 'theme-ui'
+import {useState, useRef, useEffect} from 'react'
 import {Wrapper, Section} from '../system'
 import {withGlobal} from '../global'
 import BlogListItem from './BlogListItem'

@@ -20,7 +20,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, paginate}) => {
       }}
     >
       {pageNumbers.map(num => (
-        <li key={num}>
+        <li key={`page-${num}`}>
           <button
             onClick={() => paginate(num)}
             sx={{

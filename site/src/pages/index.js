@@ -7,16 +7,14 @@ import Work from '../components/Work'
 import Hero from '../components/Hero'
 import BlogList from '../components/BlogList'
 
-const IndexPage = ({data, theme}) => {
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <Hero data={data.page} />
-      <Work projects={data.projects} />
-      <BlogList posts={data.posts} />
-    </Layout>
-  )
-}
+const IndexPage = ({data}) => (
+  <Layout>
+    <SEO title="Home" />
+    <Hero data={data.page} />
+    <Work projects={data.projects} />
+    <BlogList posts={data.posts} />
+  </Layout>
+)
 
 export const query = graphql`
   {
