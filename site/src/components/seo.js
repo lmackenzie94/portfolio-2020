@@ -24,9 +24,8 @@ function SEO({description, keywords = [], lang, meta, title}) {
           return
         }
         const seo = {
-          title: data.site.title || `Luke MacKenzie | Web Developer`,
-          titleTemplate: `${title || ''} ${title ? '|' : ''} ${data.site
-            .displayTitle || 'luke.'}`,
+          title: title || data.site.title,
+          titleTemplate: '%s | luke.',
           description: description || data.site.description,
         }
 
