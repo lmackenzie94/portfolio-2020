@@ -10,7 +10,7 @@ let containerHeight
 
 const BlogList = ({posts}) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(6)
+  const [postsPerPage] = useState(4)
   const containerRef = useRef()
 
   const indexOfLastPost = currentPage * postsPerPage
@@ -23,9 +23,8 @@ const BlogList = ({posts}) => {
   useEffect(() => {
     if (!containerHeight) {
       containerHeight = `${containerRef.current.offsetHeight}px`
-      console.log(containerHeight)
     }
-  })
+  }, [])
 
   return (
     <Wrapper id="Blog">

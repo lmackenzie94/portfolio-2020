@@ -14,7 +14,7 @@ function Footer() {
         bg: `header`,
         mt: [1, 2, 3],
         mb: [0, 0, 0],
-        py: [3, 3, 4],
+        py: [3],
         transitionProperty: `backgroundColor`,
         transition: `0.2s ease-out`,
       }}
