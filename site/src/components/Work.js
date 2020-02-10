@@ -18,7 +18,6 @@ const Work = ({projects}) => {
           items={projectArray}
           ItemRenderer={AccordionContent}
           ButtonComponent={AccordionButton}
-          containerId={`Work`}
           Container={AccordionContainer}
           // labelkey={`title`}
           // allowMultipleOpen
