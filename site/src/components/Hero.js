@@ -39,6 +39,7 @@ function Hero({data}) {
         sx={{
           display: `flex`,
           justifyContent: `space-between`,
+          alignItems: `center`,
           mb: [4, 4, 4],
         }}
       >
@@ -51,7 +52,7 @@ function Hero({data}) {
             flex: `0 0 auto`,
             m: 0,
             mr: [5, 6, 7],
-            '& li': {listStyle: `none`, m: 0, mb: 40},
+            '& li': {listStyle: `none`, m: 0, mb: 20},
           }}
         >
           {data.socials.map((social, idx) => (

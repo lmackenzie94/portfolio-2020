@@ -171,7 +171,7 @@ const theme = {
       cursor: `pointer`,
       bg: `brightWhite`,
       outline: `none`,
-      py: [4],
+      py: 25,
       px: [3, 3, 4],
       ':last-of-type': {
         borderBottom: `none`,
