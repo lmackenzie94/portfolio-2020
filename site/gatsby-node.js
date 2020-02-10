@@ -7,7 +7,7 @@ exports.onCreatePage = ({page, actions}) => {
   createPage(page)
 }
 
-exports.createPages = async ({actions, graphql, reporter}) => {
+exports.createPages = async ({actions, graphql}) => {
   const {createPage} = actions
   const result = await graphql(`
     {

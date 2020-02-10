@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {jsx, Styled, ThemeProvider} from 'theme-ui'
+import {jsx, Styled} from 'theme-ui'
 
 export const Wrapper = props => (
   <div

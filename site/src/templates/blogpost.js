@@ -83,14 +83,6 @@ export default ({data, theme}) => {
             {title}
           </h1>
           <p>{published}</p>
-          {/* <span
-            sx={{
-              display: `block`,
-              width: `100%`,
-              height: 2,
-              backgroundColor: `primary`,
-            }}
-          ></span> */}
           <Divider style={{mb: [4]}} />
           {_rawBlockcontent && (
             <BlockContent blocks={_rawBlockcontent || []} theme={theme} />
