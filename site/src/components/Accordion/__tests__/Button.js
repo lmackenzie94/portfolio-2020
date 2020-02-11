@@ -2,7 +2,7 @@ import React from 'react'
 import {render} from '@testing-library/react'
 import Button from '../Button'
 
-test('DELETE', () => {
+test('Delete later', () => {
   expect(true).toBe(true)
 })
 

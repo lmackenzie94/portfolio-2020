@@ -3,7 +3,6 @@ describe('Main pages', () => {
     cy.eyesOpen({
       appName: "Luke's Portfolio",
       testName: 'Portfolio Site - Home Page',
-      // browser: {width: 800, height: 600},
       browser: [
         {width: 800, height: 600, name: 'firefox'},
         {width: 1024, height: 768, name: 'chrome'},
@@ -14,9 +13,9 @@ describe('Main pages', () => {
         },
       ],
     })
-    afterEach(() => {
-      cy.eyesClose()
-    })
+  })
+  afterEach(() => {
+    cy.eyesClose()
   })
   it('works', () => {
     cy.visit('/')

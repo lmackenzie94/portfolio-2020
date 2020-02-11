@@ -47,8 +47,8 @@ const BlogListItem = ({idx, post}) => (
             border: `5px solid`,
             borderColor: `greyLight`,
             borderRadius: `50%`,
-            flex: `0 0 100px`,
-            height: `100px`,
+            flex: `0 0 90px`,
+            height: `90px`,
             mr: `${idx % 2 === 0 ? `25px` : `0`}`,
             ml: `${idx % 2 === 0 ? `0` : `25px`}`,
           }}

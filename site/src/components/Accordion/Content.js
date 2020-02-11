@@ -2,7 +2,6 @@
 import {jsx} from 'theme-ui'
 import Image from 'gatsby-image'
 import BlockContent from '../BlockContent'
-import {Link} from 'gatsby'
 
 const keywordStyle = {
   px: `10px`,

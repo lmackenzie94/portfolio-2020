@@ -11,11 +11,6 @@ describe('Home page', () => {
     cy.url().should('eq', Cypress.config().baseUrl)
   })
 
-  // // it.only will run only this test
-  // it('is accessible', () => {
-  //   cy.checkA11y()
-  // })
-
   it('contains only 1 h1 element', () => {
     cy.get('h1').should('have.length', 1)
   })
@@ -77,12 +72,3 @@ describe('Blog post cards', () => {
     )
   })
 })
-
-// // doesn't work
-// describe('Dark theme', () => {
-//   it('is accessible', () => {
-//     cy.get('[data-test-id="themeToggle"]')
-//       .click()
-//       .checkA11y()
-//   })
-// })
