@@ -7,11 +7,9 @@ module.exports = {
     {
       resolve: `gatsby-source-sanity`,
       options: {
-        // find in sanity.json of studio codebase
         projectId: process.env.PROJECT_ID,
         dataset: process.env.DATASET,
         token: process.env.SANITY_TOKEN,
-        // the below enabled watch mode (get token from manage.sanity.io > Settings > API > create new Read token)
         overlayDrafts: true,
         watchMode: true,
       },
