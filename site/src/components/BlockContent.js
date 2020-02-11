@@ -30,7 +30,7 @@ const serializers = {
       }
     },
     code: ({node}) => (
-      <pre data-language={node.language} className="line-numbers">
+      <pre data-language={node.language} style={{fontSize: `0.9em`}}>
         <code className="language-javascript">{node.code}</code>
       </pre>
     ),

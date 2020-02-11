@@ -56,6 +56,7 @@ export default {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
+          { title: 'Underline', value: 'underline' },
           {
             title: 'Highlight',
             value: 'highlight',
