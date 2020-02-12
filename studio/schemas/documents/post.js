@@ -51,6 +51,16 @@ export default {
       name: 'blockcontent',
       title: 'Post Text',
       type: 'blockContent'
+    },
+    {
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'array',
+      description: 'Add keywords that relate to your post',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags'
+      }
     }
   ],
   initialValue: () => ({

@@ -5,6 +5,7 @@ import {Wrapper, Section} from '../system'
 import {withGlobal} from '../global'
 import BlogListItem from './BlogListItem'
 import Pagination from './Pagination'
+import BlogFilter from './BlogFilter'
 
 let containerHeight
 
@@ -26,14 +27,33 @@ const BlogList = ({posts}) => {
     }
   }, [])
 
+  const allKeywordsForCurrentPosts = []
+  const uniqueKeywordsForCurrentPosts = {}
+
+  posts.edges.forEach(({node: post}) => {
+    allKeywordsForCurrentPosts.push(...post.keywords)
+  })
+
+  allKeywordsForCurrentPosts.forEach(word => {
+    uniqueKeywordsForCurrentPosts[word] =
+      (uniqueKeywordsForCurrentPosts[word] || 0) + 1
+  })
+
+  const sortedKeywords = Object.keys(uniqueKeywordsForCurrentPosts).sort(
+    (a, b) =>
+      uniqueKeywordsForCurrentPosts[b] - uniqueKeywordsForCurrentPosts[a],
+  )
+
   return (
     <Wrapper id="Blog">
       <Section>
         <h2 sx={{variant: `text.subheading`}}>Blog</h2>
+        <BlogFilter keywords={sortedKeywords} />
         <ul
           ref={containerRef}
           sx={{
             m: 0,
+            mt: 30,
             display: `grid`,
             gridTemplateColumns: `repeat(auto-fill, minmax(310px, 1fr))`,
             gridTemplateRows: `max-content`,

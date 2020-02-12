@@ -63,17 +63,6 @@ export default {
       options: {
         layout: 'tags'
       }
-    },
-    {
-      name: 'projectType',
-      title: 'Project Type',
-      type: 'string',
-      options: {
-        list: [
-          { value: 'personal', title: 'Personal' },
-          { value: 'professional', title: 'Professional' }
-        ]
-      }
     }
   ],
   preview: {

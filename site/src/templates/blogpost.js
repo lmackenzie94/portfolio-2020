@@ -92,6 +92,7 @@ export default ({data, theme}) => {
             sx={{
               variant: `buttons.primary`,
               mt: [4, 4, 5],
+              px: `15px`,
             }}
           >
             Back Home
