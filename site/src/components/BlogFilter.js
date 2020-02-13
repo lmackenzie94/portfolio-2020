@@ -53,7 +53,6 @@ const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
                 borderColor: `${isSelected ? `primary` : `greyLight`}`,
                 backgroundColor: `${isSelected ? `primary` : `transparent`}`,
                 color: `${isSelected ? `white` : `grey`}`,
-                fontWeight: `${isSelected ? `bold` : null}`,
                 ':hover, :focus': {
                   borderColor: `primary`,
                 },
