@@ -10,19 +10,31 @@ const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
       <button
         onClick={() => setOpenFilter(prevState => !prevState)}
         sx={{
-          backgroundColor: `${openFilter ? `darkPrimary` : `primary`}`,
-          color: `white`,
-          border: `none`,
+          backgroundColor: `white`,
+          color: `black`,
+          border: `2px solid`,
+          borderColor: `primary`,
           borderRadius: 2,
           outline: `none`,
           fontFamily: `heading`,
           fontWeight: `bold`,
           ':hover, :focus': {
-            backgroundColor: `darkPrimary`,
+            backgroundColor: `#fff2f2`,
           },
         }}
       >
         Filter
+        <span
+          sx={{
+            display: `inline-block`,
+            ml: `7px`,
+            transform: openFilter ? `rotate(90deg)` : null,
+            transition: `0.2s linear`,
+            transitionProperty: `transform`,
+          }}
+        >
+          &#x25B8;
+        </span>
       </button>
       <div
         sx={{
