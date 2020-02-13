@@ -4,9 +4,8 @@ import {Link} from 'gatsby'
 import Image from 'gatsby-image'
 
 const cardStyles = {
-  listStyle: `none`,
   display: `flex`,
-  m: 0,
+  outline: `none`,
   border: `2px solid`,
   borderColor: `grey`,
   borderRadius: 3,
@@ -16,18 +15,11 @@ const cardStyles = {
 }
 
 const BlogListItem = ({idx, post}) => (
-  <li
-    sx={{
-      ...cardStyles,
-      ':hover, :focus': {
-        bg: `${idx % 2 === 0 ? `#fff2f2` : `#e8f0ff`}`,
-      },
-    }}
-    data-test-id={`blog-post-${idx}`}
-  >
+  <li sx={{listStyle: `none`, m: 0}} data-test-id={`blog-post-${idx}`}>
     <Link
       to={`/${post.slug.current}`}
       sx={{
+        ...cardStyles,
         textDecoration: `none`,
         color: `black`,
         display: `flex`,
@@ -35,6 +27,9 @@ const BlogListItem = ({idx, post}) => (
         alignItems: `center`,
         justifyContent: `${idx % 2 === 0 ? `flex-start` : `space-between`}`,
         flexDirection: `${idx % 2 === 0 ? `row` : `row-reverse`}`,
+        ':hover, :focus': {
+          bg: `${idx % 2 === 0 ? `#fff2f2` : `#e8f0ff`}`,
+        },
       }}
     >
       {post.image.asset && (

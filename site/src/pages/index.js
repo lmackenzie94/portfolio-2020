@@ -12,7 +12,7 @@ const IndexPage = ({data}) => (
     <SEO title="Home" />
     <Hero data={data.page} />
     <Work projects={data.projects} />
-    <BlogList posts={data.posts} />
+    <BlogList allPosts={data.posts} />
   </Layout>
 )
 

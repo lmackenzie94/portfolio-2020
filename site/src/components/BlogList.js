@@ -9,15 +9,18 @@ import BlogFilter from './BlogFilter'
 
 let containerHeight
 
-const BlogList = ({posts}) => {
+const BlogList = ({allPosts}) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(4)
+  const [posts, setPosts] = useState(allPosts.edges)
+  const [selectedFilter, setSelectedFilter] = useState()
+  const [keywords, setKeywords] = useState([])
   const containerRef = useRef()
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = posts.edges.slice(indexOfFirstPost, indexOfLastPost)
-  const totalPosts = posts.edges.length
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+  const totalPosts = posts.length
 
   const paginate = num => setCurrentPage(num)
 
@@ -27,14 +30,17 @@ const BlogList = ({posts}) => {
     }
   }, [])
 
-  const allKeywordsForCurrentPosts = []
   const uniqueKeywordsForCurrentPosts = {}
 
-  posts.edges.forEach(({node: post}) => {
-    allKeywordsForCurrentPosts.push(...post.keywords)
-  })
+  useEffect(() => {
+    const keywordsArray = []
+    allPosts.edges.forEach(({node: post}) => {
+      keywordsArray.push(...post.keywords)
+    })
+    setKeywords(keywordsArray)
+  }, [allPosts])
 
-  allKeywordsForCurrentPosts.forEach(word => {
+  keywords.forEach(word => {
     uniqueKeywordsForCurrentPosts[word] =
       (uniqueKeywordsForCurrentPosts[word] || 0) + 1
   })
@@ -44,11 +50,28 @@ const BlogList = ({posts}) => {
       uniqueKeywordsForCurrentPosts[b] - uniqueKeywordsForCurrentPosts[a],
   )
 
+  const handleFilter = filter => {
+    if (selectedFilter === filter) {
+      setSelectedFilter(null)
+      setPosts(allPosts.edges)
+    } else {
+      const filteredPosts = allPosts.edges.filter(({node: post}) =>
+        post.keywords.includes(filter),
+      )
+      setSelectedFilter(filter)
+      setPosts(filteredPosts)
+    }
+  }
+
   return (
     <Wrapper id="Blog">
       <Section>
         <h2 sx={{variant: `text.subheading`}}>Blog</h2>
-        <BlogFilter keywords={sortedKeywords} />
+        <BlogFilter
+          keywords={sortedKeywords}
+          selectedFilter={selectedFilter}
+          handleFilter={handleFilter}
+        />
         <ul
           ref={containerRef}
           sx={{

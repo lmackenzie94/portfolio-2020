@@ -2,8 +2,9 @@
 import {jsx} from 'theme-ui'
 import {useState} from 'react'
 
-const BlogFilter = ({keywords}) => {
+const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
   const [openFilter, setOpenFilter] = useState(false)
+
   return (
     <div>
       <button
@@ -11,12 +12,14 @@ const BlogFilter = ({keywords}) => {
         sx={{
           backgroundColor: `primary`,
           color: `white`,
-          border: `1px solid`,
-          borderColor: `primary`,
+          border: `none`,
           borderRadius: 2,
           outline: `none`,
           fontFamily: `heading`,
           fontWeight: `bold`,
+          ':hover, :focus': {
+            backgroundColor: `darkPrimary`,
+          },
         }}
       >
         Filter
@@ -25,35 +28,40 @@ const BlogFilter = ({keywords}) => {
         sx={{
           display: openFilter ? `block` : `none`,
           mt: 20,
-          p: 15,
+          px: 15,
           backgroundColor: `brightWhite`,
           borderRadius: 2,
           color: `black`,
         }}
       >
-        {keywords.map((key, idx) => (
-          <span
-            key={idx}
-            sx={{
-              mx: `10px`,
-              fontSize: `0.9em`,
-              py: `5px`,
-              px: `10px`,
-              border: `0.5px solid`,
-              borderRadius: 2,
-              borderColor: `greyLight`,
-              color: `grey`,
-              ':hover, :focus': {
-                borderColor: `primary`,
-                color: `white`,
-                backgroundColor: `primary`,
-                fontWeight: `bold`,
-              },
-            }}
-          >
-            {key}
-          </span>
-        ))}
+        {keywords.map((key, idx) => {
+          const isSelected = key === selectedFilter
+          return (
+            <button
+              key={idx}
+              onClick={e => handleFilter(e.target.innerText)}
+              sx={{
+                m: `10px`,
+                fontSize: `0.9em`,
+                py: `5px`,
+                px: `8px`,
+                outline: `none`,
+                border: `0.5px solid`,
+                borderRadius: 2,
+                borderColor: `${isSelected ? `primary` : `greyLight`}`,
+                backgroundColor: `${isSelected ? `primary` : `transparent`}`,
+                color: `${isSelected ? `white` : `grey`}`,
+                fontWeight: `${isSelected ? `bold` : null}`,
+                ':hover, :focus': {
+                  borderColor: `primary`,
+                  fontWeight: `bold`,
+                },
+              }}
+            >
+              {key}
+            </button>
+          )
+        })}
       </div>
     </div>
   )

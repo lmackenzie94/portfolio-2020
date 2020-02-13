@@ -186,6 +186,7 @@ const theme = {
       color: `text`,
       transitionProperty: `color`,
       transition: `0.2s ease-out`,
+      outline: `none`,
       ':hover, :focus': {
         color: `primary`,
       },
