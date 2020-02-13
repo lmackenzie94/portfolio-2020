@@ -10,7 +10,7 @@ const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
       <button
         onClick={() => setOpenFilter(prevState => !prevState)}
         sx={{
-          backgroundColor: `primary`,
+          backgroundColor: `${openFilter ? `darkPrimary` : `primary`}`,
           color: `white`,
           border: `none`,
           borderRadius: 2,
@@ -29,6 +29,7 @@ const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
           display: openFilter ? `block` : `none`,
           mt: 20,
           px: 15,
+          py: `5px`,
           backgroundColor: `brightWhite`,
           borderRadius: 2,
           color: `black`,
@@ -41,7 +42,8 @@ const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
               key={idx}
               onClick={e => handleFilter(e.target.innerText)}
               sx={{
-                m: `10px`,
+                mx: [2],
+                my: [1],
                 fontSize: `0.9em`,
                 py: `5px`,
                 px: `8px`,
@@ -54,7 +56,6 @@ const BlogFilter = ({keywords, selectedFilter, handleFilter}) => {
                 fontWeight: `${isSelected ? `bold` : null}`,
                 ':hover, :focus': {
                   borderColor: `primary`,
-                  fontWeight: `bold`,
                 },
               }}
             >
