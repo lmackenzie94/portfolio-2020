@@ -3,8 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from 'part:@sanity/base/client';
-import { assemblePageUrl, websiteUrl, toPlainText } from './frontendUtils';
+import { assemblePageUrl } from './frontendUtils';
 import styles from './TwitterCard.css';
+import TwitterImg from '../../../img/avitar.jpg';
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -13,9 +14,9 @@ const urlFor = source => {
 };
 
 const author = {
-  name: 'Camp Jefferson',
-  handle: 'campj',
-  image: 'https://www.datocms-assets.com/7673/1542214547-favicon.png'
+  name: 'Luke MacKenzie',
+  handle: 'l_mackenzie94',
+  image: TwitterImg
 };
 
 class TwitterCard extends React.PureComponent {
