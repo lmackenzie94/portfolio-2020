@@ -6,6 +6,7 @@ import {withGlobal} from '../global'
 import BlogListItem from './BlogListItem'
 import Pagination from './Pagination'
 import BlogFilter from './BlogFilter'
+import {useIntersectionObserver} from '@lmack/hooks'
 
 let containerHeight
 
@@ -63,9 +64,18 @@ const BlogList = ({allPosts}) => {
     }
   }
 
+  const [ref, isVisible] = useIntersectionObserver({
+    rootMargin: '-100px',
+    triggerOnce: true,
+  })
+
+  // const opacitySpring = useSpring({
+  //   opacity: isVisible ? 1 : 0,
+  // })
+
   return (
     <Wrapper id="Blog">
-      <Section>
+      <Section ref={ref}>
         <h2 sx={{variant: `text.subheading`}}>Blog</h2>
         <BlogFilter
           keywords={sortedKeywords}

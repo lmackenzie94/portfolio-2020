@@ -1,9 +1,12 @@
 /** @jsx jsx */
+import React from 'react'
 import {jsx, Styled} from 'theme-ui'
+import {motion} from 'framer-motion'
 
-export const Wrapper = props => (
+export const Wrapper = React.forwardRef((props, ref) => (
   <div
     {...props}
+    ref={ref}
     sx={{
       maxWidth: `950px`,
       margin: `0 auto`,
@@ -11,42 +14,49 @@ export const Wrapper = props => (
       ...props.sx,
     }}
   />
-)
+))
+export const Section = React.forwardRef(({sx, ...props}, ref) => (
+  // NOTE: Styled.section does not work
+  <Styled.div
+    as={`section`}
+    ref={ref}
+    {...props}
+    sx={{
+      my: [5, 5, 6, 6],
+      ...sx,
+    }}
+  />
+))
 
-export const Section = ({sx, ...props}) => {
-  return (
-    // NOTE: Styled.section does not work
+// export const AnimatedSection = animated(Section)
+// export const AnimatedSection = animated(Section)
+
+export const SectionHeading = React.forwardRef(
+  ({sx, children, ...props}, ref) => (
     <Styled.div
-      as={`section`}
-      {...props}
-      sx={{
-        my: [5, 5, 6, 6],
-        ...sx,
-      }}
-    />
-  )
-}
-export const SectionHeading = ({sx, children, ...props}) => (
-  <Styled.div sx={{mb: 25, borderBottom: `3px solid`, borderColor: `primary`}}>
-    <h2
-      {...props}
-      sx={{
-        mb: 0,
-        px: 10,
-        py: `5px`,
-        display: `inline-block`,
-        bg: `rgba(255,255,255,0.8)`,
-        color: `black`,
-        borderTop: `3px solid`,
-        borderRight: `3px solid`,
-        borderLeft: `3px solid`,
-        borderColor: `primary`,
-        borderRadius: `5px 5px 0 0`,
-      }}
+      sx={{mb: 25, borderBottom: `3px solid`, borderColor: `primary`}}
     >
-      {children}
-    </h2>
-  </Styled.div>
+      <h2
+        ref={ref}
+        {...props}
+        sx={{
+          mb: 0,
+          px: 10,
+          py: `5px`,
+          display: `inline-block`,
+          bg: `rgba(255,255,255,0.8)`,
+          color: `black`,
+          borderTop: `3px solid`,
+          borderRight: `3px solid`,
+          borderLeft: `3px solid`,
+          borderColor: `primary`,
+          borderRadius: `5px 5px 0 0`,
+        }}
+      >
+        {children}
+      </h2>
+    </Styled.div>
+  ),
 )
 
 export const Divider = ({style}) => {

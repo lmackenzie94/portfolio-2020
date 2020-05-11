@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
+import {useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faFacebookSquare,
@@ -12,6 +13,7 @@ import {Wrapper, Section, Divider} from '../system/index'
 import {withGlobal} from '../global'
 import BlockContent from './BlockContent'
 import {OutboundLink} from 'gatsby-plugin-google-analytics'
+import {motion} from 'framer-motion'
 
 const getSocialIcon = platform => {
   switch (platform) {
@@ -32,7 +34,34 @@ const getSocialIcon = platform => {
   }
 }
 
+const list = {
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
+      delayChildren: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+}
+
+const item = {
+  visible: {opacity: 1, x: 0},
+  hidden: {opacity: 0, x: -100},
+}
+
+let hasAnimated = false
+
 function Hero({data}) {
+  useEffect(() => {
+    hasAnimated = true
+  })
   return (
     <Wrapper>
       <Section
@@ -43,7 +72,7 @@ function Hero({data}) {
           mb: [4, 4, 4],
         }}
       >
-        <ul
+        <motion.ul
           sx={{
             display: `flex`,
             flexDirection: `column`,
@@ -54,9 +83,12 @@ function Hero({data}) {
             mr: [5, 6, 7],
             '& li': {listStyle: `none`, m: 0, mb: 20},
           }}
+          initial="hidden"
+          animate="visible"
+          variants={!hasAnimated && list}
         >
           {data.socials.map((social, idx) => (
-            <li key={`social-${idx}`}>
+            <motion.li key={`social-${idx}`} variants={!hasAnimated && item}>
               {social.platform === `Resume` ? (
                 <a
                   href={social.file.asset.url}
@@ -90,13 +122,27 @@ function Hero({data}) {
                   />
                 </OutboundLink>
               )}
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
         <div sx={{flex: `1 1 auto`}}>
-          <h2 sx={{variant: `text.subheading`}}>{data.title}</h2>
+          <motion.h2
+            sx={{
+              variant: `text.subheading`,
+            }}
+            initial={{y: 10, opacity: 0}}
+            animate={{y: 0, opacity: 1}}
+          >
+            {data.title}
+          </motion.h2>
           {data._rawParagraph && (
-            <BlockContent blocks={data._rawParagraph || []} />
+            <motion.div
+              initial={{y: 10, opacity: 0}}
+              animate={{y: 0, opacity: 1}}
+              transition={{delay: 0.5}}
+            >
+              <BlockContent blocks={data._rawParagraph || []} />
+            </motion.div>
           )}
         </div>
       </Section>
