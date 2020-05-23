@@ -6,7 +6,8 @@ import {withGlobal} from '../global'
 import BlogListItem from './BlogListItem'
 import Pagination from './Pagination'
 import BlogFilter from './BlogFilter'
-import {useIntersectionObserver} from '@lmack/hooks'
+import {motion} from 'framer-motion'
+// import {useIntersectionObserver} from '@lmack/hooks'
 
 let containerHeight
 
@@ -64,49 +65,51 @@ const BlogList = ({allPosts}) => {
     }
   }
 
-  const [ref, isVisible] = useIntersectionObserver({
-    rootMargin: '-100px',
-    triggerOnce: true,
-  })
-
-  // const opacitySpring = useSpring({
-  //   opacity: isVisible ? 1 : 0,
+  // const [ref, isVisible] = useIntersectionObserver({
+  //   rootMargin: '-100px',
+  //   triggerOnce: true,
   // })
 
   return (
     <Wrapper id="Blog">
-      <Section ref={ref}>
-        <h2 sx={{variant: `text.subheading`}}>Blog</h2>
-        <BlogFilter
-          keywords={sortedKeywords}
-          selectedFilter={selectedFilter}
-          handleFilter={handleFilter}
-        />
-        <ul
-          ref={containerRef}
-          sx={{
-            m: 0,
-            mt: 30,
-            display: `grid`,
-            gridTemplateColumns: `repeat(auto-fill, minmax(310px, 1fr))`,
-            gridTemplateRows: `max-content`,
-            gridGap: `25px`,
-            paddingLeft: `20px`,
-            borderLeft: `4px solid`,
-            borderColor: `primary`,
-            minHeight: [`none`, containerHeight],
-          }}
+      <Section>
+        <motion.div
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{delay: 1.5}}
         >
-          {currentPosts.map(({node: post}, idx) => {
-            return <BlogListItem key={post.title} idx={idx} post={post} />
-          })}
-        </ul>
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={totalPosts}
-          currentPage={currentPage}
-          paginate={paginate}
-        />
+          <h2 sx={{variant: `text.subheading`}}>Blog</h2>
+          <BlogFilter
+            keywords={sortedKeywords}
+            selectedFilter={selectedFilter}
+            handleFilter={handleFilter}
+          />
+          <ul
+            ref={containerRef}
+            sx={{
+              m: 0,
+              mt: 30,
+              display: `grid`,
+              gridTemplateColumns: `repeat(auto-fill, minmax(310px, 1fr))`,
+              gridTemplateRows: `max-content`,
+              gridGap: `25px`,
+              paddingLeft: `20px`,
+              borderLeft: `4px solid`,
+              borderColor: `primary`,
+              minHeight: [`none`, containerHeight],
+            }}
+          >
+            {currentPosts.map(({node: post}, idx) => {
+              return <BlogListItem key={post.title} idx={idx} post={post} />
+            })}
+          </ul>
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={totalPosts}
+            currentPage={currentPage}
+            paginate={paginate}
+          />
+        </motion.div>
       </Section>
     </Wrapper>
   )
