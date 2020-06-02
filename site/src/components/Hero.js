@@ -130,8 +130,8 @@ function Hero({data}) {
             sx={{
               variant: `text.subheading`,
             }}
-            initial={{y: 10, opacity: 0}}
-            animate={{y: 0, opacity: 1}}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
           >
             {data.title}
           </motion.h2>
@@ -139,7 +139,7 @@ function Hero({data}) {
             <motion.div
               initial={{y: 10, opacity: 0}}
               animate={{y: 0, opacity: 1}}
-              transition={{delay: 0.5}}
+              transition={{delay: hasAnimated ? 0 : 0.5}}
             >
               <BlockContent blocks={data._rawParagraph || []} />
             </motion.div>
