@@ -15,7 +15,7 @@
     "@lmack/accordion": "^1.0.5",
     "@lmack/core": "^1.0.0",
     "@lmack/hooks": "^1.0.11",
-    "@lmack/sanity-heroku-preview": "^1.0.2",
+    "@lmack/sanity-heroku-preview": "^1.0.3",
     "@mdx-js/react": "^1.5.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "css-vars-ponyfill": "^2.1.2",
