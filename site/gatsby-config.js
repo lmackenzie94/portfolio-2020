@@ -40,26 +40,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Heebo`,
-            variants: [`900`, `700`],
-          },
-          {
-            family: `Lora`,
-            variants: [`400`],
-          },
-          {
-            family: `Noto Sans`,
-            variants: [400, 700],
-          },
-        ],
-      },
-    },
-    // `gatsby-plugin-preact`,
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
@@ -68,6 +48,34 @@ module.exports = {
         head: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Heebo: 900, 700', 'Lora: 400', 'Noto Sans: 400, 700'],
+        },
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Heebo`,
+    //         variants: [`900`, `700`],
+    //       },
+    //       {
+    //         family: `Lora`,
+    //         variants: [`400`],
+    //       },
+    //       {
+    //         family: `Noto Sans`,
+    //         variants: [`400`, `700`],
+    //       },
+    //     ],
+    //   },
+    // },
+    // `gatsby-plugin-preact`,
     // {
     //   resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
     //   options: {
