@@ -113,6 +113,8 @@ function Hero({data}) {
                   }
                   sx={{variant: `buttons.social`}}
                   aria-label={`${social.platform} icon`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
                     icon={getSocialIcon(social.platform)}
