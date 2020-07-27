@@ -62,6 +62,7 @@ function Hero({data}) {
   useEffect(() => {
     hasAnimated = true
   })
+
   return (
     <Wrapper>
       <Section

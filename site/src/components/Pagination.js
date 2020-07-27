@@ -40,6 +40,7 @@ const Pagination = ({postsPerPage, totalPosts, currentPage, paginate}) => {
                 color: `white`,
               },
             }}
+            data-testid="page-btn"
           >
             {num}
           </button>
