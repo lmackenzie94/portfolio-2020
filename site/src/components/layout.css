@@ -187,7 +187,7 @@ textarea {
 html {
   box-sizing: border-box;
   overflow-y: scroll;
-  font-size: 112.5%;
+  /* font-size: 100%; */
 }
 * {
   box-sizing: inherit;

@@ -3,7 +3,7 @@ import {darken, lighten} from 'polished'
 export const fontSizesPx = [12, 14, 16, 18, 20, 24, 32, 48, 64, 96]
 
 // because default html font size is 100%
-let baseFontSize = 18
+let baseFontSize = 16
 
 const fontSizesRem = fontSizesPx.map(size => {
   return `${size / baseFontSize}rem`
