@@ -4,7 +4,6 @@ import {useEffect} from 'react'
 import {Link} from 'gatsby'
 import ThemeToggle from './ThemeToggle'
 import {Wrapper} from '../system/index'
-import {withGlobal} from '../global'
 import {motion} from 'framer-motion'
 
 let hasAnimated = false
@@ -62,4 +61,4 @@ const Header = ({siteTitle, fontSizeIdx}) => {
   )
 }
 
-export default withGlobal(Header)
+export default Header

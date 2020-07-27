@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faFacebookSquare,
@@ -10,7 +10,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faFile} from '@fortawesome/free-solid-svg-icons'
 import {Wrapper, Section, Divider} from '../system/index'
-import {withGlobal} from '../global'
 import BlockContent from './BlockContent'
 import {OutboundLink} from 'gatsby-plugin-google-analytics'
 import {motion} from 'framer-motion'
@@ -59,9 +58,14 @@ const item = {
 let hasAnimated = false
 
 function Hero({data}) {
+  const [_, forceRerender] = useState(false)
   useEffect(() => {
     hasAnimated = true
+    // temporary fix to make social icons animate in after changing to dark mode and refreshing the page
+    forceRerender(true)
   })
+
+  console.log(hasAnimated)
 
   return (
     <Wrapper>
@@ -89,7 +93,7 @@ function Hero({data}) {
           variants={!hasAnimated && list}
         >
           {data.socials.map((social, idx) => (
-            <motion.li key={`social-${idx}`} variants={!hasAnimated && item}>
+            <motion.li key={`social-${idx}`} variants={item}>
               {social.platform === `Resume` ? (
                 <a
                   href={social.file.asset.url}
@@ -154,4 +158,4 @@ function Hero({data}) {
   )
 }
 
-export default withGlobal(Hero)
+export default Hero

@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {Global, css} from '@emotion/core'
 import Header from './Header'
 import AccessibilityPanel from './AccessibilityPanel'
-import {GlobalProvider} from '../global'
 import Footer from './Footer'
 import './layout.css'
 
@@ -29,7 +28,7 @@ const Layout = ({children, siteTitle}) => {
   }, [fontSizeIdx])
 
   return (
-    <GlobalProvider value={{fontSizeIdx}}>
+    <>
       <Global
         styles={css`
           * {
@@ -56,9 +55,6 @@ const Layout = ({children, siteTitle}) => {
       />
       <Global
         styles={theme => ({
-          html: {
-            // fontSize: '112.5%' // 18px
-          },
           body: {
             color: theme.colors.text,
             backgroundColor: theme.colors.background,
@@ -67,6 +63,8 @@ const Layout = ({children, siteTitle}) => {
               : theme.fonts.body,
             lineHeight: `1.6`,
             fontSize: theme.fontSizes[fontSizeIdx],
+            transitionProperty: `background`,
+            transition: `0.2s ease-out`,
           },
           h1: {
             fontSize: theme.fontSizes[fontSizeIdx + 4],
@@ -93,7 +91,7 @@ const Layout = ({children, siteTitle}) => {
       {/* flex: 1 to push footer down on 404 page */}
       <main sx={{flex: 1}}>{children}</main>
       <Footer />
-    </GlobalProvider>
+    </>
   )
 }
 

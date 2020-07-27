@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from '../containers/Layout.js'
 import SEO from '../components/seo'
 import {graphql} from 'gatsby'
-import {withGlobal} from '../global/index.js'
 import {Wrapper, Section} from '../system/index.js'
 
 export const query = graphql`
@@ -26,4 +25,4 @@ const NotFoundPage = ({data}) => (
   </Layout>
 )
 
-export default withGlobal(NotFoundPage)
+export default NotFoundPage

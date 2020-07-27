@@ -2,7 +2,6 @@
 import {jsx} from 'theme-ui'
 import {useState, useRef, useEffect} from 'react'
 import {Wrapper, Section} from '../system'
-import {withGlobal} from '../global'
 import BlogListItem from './BlogListItem'
 import Pagination from './Pagination'
 import BlogFilter from './BlogFilter'
@@ -119,4 +118,4 @@ const BlogList = ({allPosts}) => {
     </Wrapper>
   )
 }
-export default withGlobal(BlogList)
+export default BlogList
