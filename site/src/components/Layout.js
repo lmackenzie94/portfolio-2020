@@ -79,6 +79,15 @@ const Layout = ({children, siteTitle}) => {
             transitionProperty: `color`,
             transition: `0.2s ease-out`,
           },
+          '::-moz-selection': {
+            color: theme.colors.white,
+            background: theme.colors.primary,
+          },
+
+          '::selection': {
+            color: theme.colors.white,
+            background: theme.colors.primary,
+          },
         })}
       />
       <Header siteTitle={siteTitle} />
