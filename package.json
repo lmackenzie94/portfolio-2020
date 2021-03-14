@@ -9,7 +9,7 @@
     "graphql": "cd studio && sanity graphql deploy --playground"
   },
   "devDependencies": {
-    "gatsby-cli": "^2.7.54",
+    "gatsby-cli": "^3.0.0",
     "lerna": "^3.16.4"
   },
   "engines": {
