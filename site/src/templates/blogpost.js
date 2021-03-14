@@ -56,7 +56,7 @@ export const query = graphql`
   }
 `
 
-export default ({data, theme}) => {
+const BlogPost = ({data, theme}) => {
   const {title, published, _rawBlockcontent} = data.post
 
   // // for syntax highlighting
@@ -102,3 +102,5 @@ export default ({data, theme}) => {
     </Layout>
   )
 }
+
+export default BlogPost;
