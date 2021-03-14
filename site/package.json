@@ -7,14 +7,19 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,json,md,css,html}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "test": "jest",
-    "cy:open": "cypress open",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
+    "cy:open": "cypress open",
+    "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
+    "pretest:e2e:run": "yarn build",
+    "test:e2e:run": "start-server-and-test start http://localhost:8000 cy:run",
+    "test:e2e:dev": "start-server-and-test start http://localhost:8000 cy:open"
   },
   "dependencies": {
     "@campj/utils": "^1.1.4",
@@ -31,6 +36,7 @@
     "@mdx-js/react": "^1.5.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "css-vars-ponyfill": "^2.1.2",
+    "cypress": "4.11.0",
     "dotenv": "^8.1.0",
     "framer-motion": "^1.10.3",
     "gatsby": "^2.19.15",
@@ -45,6 +51,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-sanity": "^5.0.2",
     "hoist-non-react-statics": "^3.3.1",
+    "is-ci-cli": "^2.1.2",
     "logrocket": "^1.0.6",
     "polished": "^3.4.1",
     "prismjs": "^1.17.1",
@@ -61,7 +68,6 @@
     "babel-jest": "^24.9.0",
     "babel-plugin-prismjs": "^1.1.1",
     "babel-preset-gatsby": "^0.2.20",
-    "cypress": "^4.0.1",
     "cypress-axe": "^0.5.3",
     "eslint": "^6.8.0",
     "eslint-plugin-cypress": "^2.8.1",
@@ -72,7 +78,7 @@
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.18.2",
-    "start-server-and-test": "^1.10.6"
+    "start-server-and-test": "^1.11.2"
   },
   "keywords": [
     "gatsby"
@@ -83,6 +89,13 @@
       "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "**/*.+(js|json|css|html|md)": [
+      "prettier",
+      "jest --findRelatedTests",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
@@ -91,6 +104,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "engines": {
-    "node": "10.x"
+    "node": "14.x"
   }
 }
