@@ -35,7 +35,7 @@ const BlogListItem = ({idx, post}) => (
       {post.image.asset && (
         <Image
           loading={`lazy`}
-          fluid={post.image.asset.fluid}
+          fixed={post.image.asset.fixed}
           alt={post.image.alt}
           sx={{
             display: `inline-block`,
