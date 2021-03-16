@@ -2828,10 +2828,10 @@
     react-dom "^16.12.0"
     react-spring "^8.0.27"
 
-"@lmack/core@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@lmack/core/-/core-1.0.1.tgz#3095a02d1acb076ffa37e59b279d2eff460d22fa"
-  integrity sha512-YN5h0/HkSilSMHbDff6qf0XpBFCpEqLZdhywpqe+mZ6/r0QmBNONIzRPv7H9ipnJdZgWruMauFJvRg6i6YJJcw==
+"@lmack/core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lmack/core/-/core-1.0.2.tgz#dc9752ae06f0c3cb5ebd0ae9f05308aeee6c681b"
+  integrity sha512-JTb+5EodV4lVDG7Ax9OGDb6peSjOlQKYMyN4bVgJWiQab04h44Px66YFnRADz2xUwJ2i+L71P1vHX+yClFbNiA==
   dependencies:
     "@campj/utils" "^1.0.13"
     gatsby-plugin-catch-links "^3.0.0"
