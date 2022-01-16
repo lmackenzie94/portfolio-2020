@@ -22,6 +22,7 @@ const roundButtonStyles = {
   width: `30px`,
   height: `30px`,
   p: 0,
+  color: `black`,
   ':focus': {
     borderColor: `black`,
   },
