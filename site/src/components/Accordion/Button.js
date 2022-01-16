@@ -17,6 +17,7 @@ function AccordionButton({data, ...rest}) {
           flex: `1 1 auto`,
           textAlign: `left`,
           fontFamily: `heading`,
+          color: `black`,
         }}
       >
         {data.title}

@@ -73,7 +73,7 @@ const Layout = ({children, siteTitle}) => {
             fontSize: theme.fontSizes[fontSizeIdx + 3],
           },
           h3: {
-            fontSize: theme.fontSizes[fontSizeIdx + 2],
+            fontSize: theme.fontSizes[fontSizeIdx + 1],
           },
           'p, h1, h2, h3': {
             transitionProperty: `color`,

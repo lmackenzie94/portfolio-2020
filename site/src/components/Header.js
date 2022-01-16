@@ -1,20 +1,12 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
-import {useEffect} from 'react'
 import {Link} from 'gatsby'
 import ThemeToggle from './ThemeToggle'
 import {Wrapper} from '../system/index'
-import {motion} from 'framer-motion'
-
-let hasAnimated = false
 
 const Header = ({siteTitle, fontSizeIdx}) => {
-  useEffect(() => {
-    hasAnimated = true
-  })
-
   return (
-    <motion.header
+    <header
       role="banner"
       sx={{
         bg: `header`,
@@ -24,9 +16,6 @@ const Header = ({siteTitle, fontSizeIdx}) => {
         transition: `0.2s ease-out`,
         position: `relative`,
       }}
-      initial={{y: hasAnimated ? 0 : -80}}
-      animate={{y: 0}}
-      transition={{damping: 25}}
     >
       <Wrapper>
         <div
@@ -57,7 +46,7 @@ const Header = ({siteTitle, fontSizeIdx}) => {
           </div>
         </div>
       </Wrapper>
-    </motion.header>
+    </header>
   )
 }
 
