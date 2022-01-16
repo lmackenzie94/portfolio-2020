@@ -5,6 +5,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCanadianMapleLeaf} from '@fortawesome/free-brands-svg-icons'
 
 function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <Section
       as={`footer`}
@@ -26,7 +28,7 @@ function Footer() {
             icon={faCanadianMapleLeaf}
             sx={{mx: `8px`, color: `primary`}}
           />
-          2020
+          {currentYear}
         </p>
       </Wrapper>
     </Section>

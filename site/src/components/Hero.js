@@ -38,8 +38,8 @@ const list = {
     opacity: 1,
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.2,
-      delayChildren: 0.4,
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
     },
   },
   hidden: {
@@ -64,8 +64,6 @@ function Hero({data}) {
     // temporary fix to make social icons animate in after changing to dark mode and refreshing the page
     forceRerender(true)
   })
-
-  console.log(hasAnimated)
 
   return (
     <Wrapper>
@@ -133,23 +131,17 @@ function Hero({data}) {
           ))}
         </motion.ul>
         <div sx={{flex: `1 1 auto`}}>
-          <motion.h2
+          <h2
             sx={{
               variant: `text.subheading`,
             }}
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
           >
             {data.title}
-          </motion.h2>
+          </h2>
           {data._rawParagraph && (
-            <motion.div
-              initial={{y: 10, opacity: 0}}
-              animate={{y: 0, opacity: 1}}
-              transition={{delay: hasAnimated ? 0 : 0.5}}
-            >
+            <div>
               <BlockContent blocks={data._rawParagraph || []} />
-            </motion.div>
+            </div>
           )}
         </div>
       </Section>
