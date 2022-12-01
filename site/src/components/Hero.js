@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import {useEffect, useState} from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
   faFacebookSquare,
-  faTwitter,
   faGithub,
   faLinkedin,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faFile} from '@fortawesome/free-solid-svg-icons'
-import {Wrapper, Section, Divider} from '../system/index'
-import BlockContent from './BlockContent'
-import {OutboundLink} from 'gatsby-plugin-google-analytics'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {motion} from 'framer-motion'
+import {OutboundLink} from 'gatsby-plugin-google-analytics'
+import {useEffect, useState} from 'react'
+import {jsx} from 'theme-ui'
+import {Divider, Section, Wrapper} from '../system/index'
+import BlockContent from './BlockContent'
 
 const getSocialIcon = platform => {
   switch (platform) {
@@ -39,7 +39,6 @@ const list = {
     transition: {
       when: 'beforeChildren',
       staggerChildren: 0.1,
-      delayChildren: 0.3,
     },
   },
   hidden: {
@@ -52,7 +51,7 @@ const list = {
 
 const item = {
   visible: {opacity: 1, x: 0},
-  hidden: {opacity: 0, x: -100},
+  hidden: {opacity: 0, x: -10},
 }
 
 let hasAnimated = false
