@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Heebo';
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/Heebo-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/NotoSans-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/NotoSans-SemiBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lora';
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Lora.woff2) format('woff2');
+}

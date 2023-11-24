@@ -48,14 +48,14 @@ module.exports = {
         head: false,
       },
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Heebo: 900, 700', 'Lora: 400', 'Noto Sans: 400, 700'],
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     google: {
+    //       families: ['Heebo: 900, 700', 'Lora: 400', 'Noto Sans: 400, 700'],
+    //     },
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {

@@ -92,13 +92,14 @@ const theme = {
     body: 400,
     heading: 900,
     bold: 700,
+    medium: 500,
   },
   text: {
     title: {
       color: `primary`,
       fontFamily: `title`,
-      fontWeight: `heading`,
-      letterSpacing: `2px`,
+      fontWeight: `medium`,
+      letterSpacing: `1px`,
     },
     heading: {
       color: `primary`,
