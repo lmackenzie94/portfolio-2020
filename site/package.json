@@ -35,7 +35,6 @@
     "@lmack/sanity-heroku-preview": "^1.0.3",
     "@mdx-js/react": "^1.5.0",
     "@sanity/block-content-to-react": "^2.0.7",
-    "css-vars-ponyfill": "^2.1.2",
     "cypress": "4.11.0",
     "dotenv": "^8.1.0",
     "framer-motion": "^1.10.3",
@@ -74,6 +73,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-cypress": "^2.8.1",
     "eslint-plugin-react": "^7.17.0",
+    "gatsby-cli": "^3.0.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.8",
     "husky": "^4.0.9",
     "identity-obj-proxy": "^3.0.0",
@@ -106,6 +106,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=16"
   }
 }

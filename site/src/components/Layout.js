@@ -7,6 +7,7 @@ import Header from './Header'
 import AccessibilityPanel from './AccessibilityPanel'
 import Footer from './Footer'
 import './layout.css'
+import Helmet from 'react-helmet'
 
 const accessibleFontStack = 'Arial,Helvetica Neue,Helvetica,sans-serif'
 
@@ -29,6 +30,30 @@ const Layout = ({children, siteTitle}) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/heebo/v22/NGSpv5_NC0k9P_v6ZUCbLRAHxK1EiSysdUmm7UiCXB5W.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin
+        />
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkq18ndeYxZ0.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin
+        />
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/notosans/v34/o-0IIpQlx3QUlC5A4PNr5TRASf6M7Q.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin
+        />
+      </Helmet>
       <Global
         styles={css`
           * {
