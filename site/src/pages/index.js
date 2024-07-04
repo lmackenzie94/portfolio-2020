@@ -77,8 +77,8 @@ export const query = graphql`
           image {
             alt
             asset {
-              fixed(width: 90, height: 90){
-                ...GatsbySanityImageFixed 
+              fixed(width: 90, height: 90) {
+                ...GatsbySanityImageFixed
               }
             }
           }
