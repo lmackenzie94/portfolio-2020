@@ -31,7 +31,7 @@ export const query = graphql`
         }
       }
     }
-    projects: allSanityProject {
+    projects: allSanityProject(sort: {fields: [_createdAt], order: DESC}) {
       edges {
         node {
           title
