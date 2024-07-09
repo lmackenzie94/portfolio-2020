@@ -82,7 +82,7 @@ function Hero({data}) {
             justifyContent: `center`,
             flex: `0 0 auto`,
             m: 0,
-            mr: [5, 6, 7],
+            mr: [4, 6, 7],
             '& li': {listStyle: `none`, m: 0, mb: 20},
           }}
           initial="hidden"

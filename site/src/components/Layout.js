@@ -7,6 +7,7 @@ import Header from './Header'
 import AccessibilityPanel from './AccessibilityPanel'
 import Footer from './Footer'
 import './layout.css'
+import Banner from './Banner'
 
 const accessibleFontStack = 'Arial,Helvetica Neue,Helvetica,sans-serif'
 
@@ -91,6 +92,7 @@ const Layout = ({children, siteTitle}) => {
         })}
       />
       <Header siteTitle={siteTitle} />
+      <Banner text="New portfolio site coming soon! 👀" />
       <AccessibilityPanel
         setFontSizeIdx={setFontSizeIdx}
         fontSizeIdx={fontSizeIdx}

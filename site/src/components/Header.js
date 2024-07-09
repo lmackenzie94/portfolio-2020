@@ -10,7 +10,6 @@ const Header = ({siteTitle, fontSizeIdx}) => {
       role="banner"
       sx={{
         bg: `header`,
-        mb: [1, 2, 3],
         py: [3],
         transitionProperty: `backgroundColor`,
         transition: `0.2s ease-out`,
