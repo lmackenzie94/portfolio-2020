@@ -98,6 +98,7 @@ function Hero({data}) {
                   rel="noopener noreferrer"
                   sx={{variant: `buttons.social`}}
                   aria-label={`${social.platform} icon`}
+                  title="Download my resume"
                 >
                   <FontAwesomeIcon
                     icon={getSocialIcon(social.platform)}
@@ -117,6 +118,9 @@ function Hero({data}) {
                   aria-label={`${social.platform} icon`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={
+                    social.platform === 'Email' ? `Email me!` : social.platform
+                  }
                 >
                   <FontAwesomeIcon
                     icon={getSocialIcon(social.platform)}
