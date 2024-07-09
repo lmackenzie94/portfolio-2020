@@ -17,6 +17,7 @@ const Banner = ({text}) => {
             mb: 0,
             fontWeight: 'bold',
             fontFamily: 'heading',
+            color: 'black',
           }}
         >
           {text}
