@@ -12,7 +12,8 @@ const Banner = ({text}) => {
       animate={{
         y: 0,
         transition: {
-          duration: 0.3,
+          ease: 'easeOut',
+          duration: 0.2,
           delay: 1.5,
         },
       }}
