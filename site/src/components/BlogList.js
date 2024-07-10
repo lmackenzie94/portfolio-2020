@@ -9,7 +9,6 @@ import {motion} from 'framer-motion'
 // import {useIntersectionObserver} from '@lmack/hooks'
 
 let containerHeight
-let hasAnimated = false
 
 const BlogList = ({allPosts}) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -65,22 +64,13 @@ const BlogList = ({allPosts}) => {
     }
   }
 
-  useEffect(() => {
-    hasAnimated = true
-  })
-
-  // const [ref, isVisible] = useIntersectionObserver({
-  //   rootMargin: '-100px',
-  //   triggerOnce: true,
-  // })
-
   return (
     <Wrapper id="Blog">
       <Section>
         <motion.div
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{delay: hasAnimated ? 0 : 1.5}}
+          initial={{opacity: 0, y: 10}}
+          animate={{opacity: 1, y: 0}}
+          transition={{delay: 0.15}}
         >
           <h2 sx={{variant: `text.subheading`}}>Blog</h2>
           <BlogFilter

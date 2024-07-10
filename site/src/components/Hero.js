@@ -39,6 +39,7 @@ const list = {
     transition: {
       when: 'beforeChildren',
       staggerChildren: 0.1,
+      delay: 0.25,
     },
   },
   hidden: {
@@ -66,88 +67,96 @@ function Hero({data}) {
 
   return (
     <Wrapper>
-      <Section
-        sx={{
-          display: `flex`,
-          justifyContent: `space-between`,
-          alignItems: `center`,
-          mb: [4, 4, 4],
-        }}
+      <motion.div
+        initial={{opacity: 0, x: 10}}
+        animate={{opacity: 1, x: 0}}
+        transition={{delay: 0.15}}
       >
-        <motion.ul
+        <Section
           sx={{
             display: `flex`,
-            flexDirection: `column`,
+            justifyContent: `space-between`,
             alignItems: `center`,
-            justifyContent: `center`,
-            flex: `0 0 auto`,
-            m: 0,
-            mr: [4, 6, 7],
-            '& li': {listStyle: `none`, m: 0, mb: 20},
+            mb: [4, 4, 4],
           }}
-          initial="hidden"
-          animate="visible"
-          variants={!hasAnimated && list}
         >
-          {data.socials.map((social, idx) => (
-            <motion.li key={`social-${idx}`} variants={item}>
-              {social.platform === `Resume` ? (
-                <a
-                  href={social.file.asset.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{variant: `buttons.social`}}
-                  aria-label={`${social.platform} icon`}
-                  title="Download my resume"
-                >
-                  <FontAwesomeIcon
-                    icon={getSocialIcon(social.platform)}
-                    sx={{maxWidth: `100%`}}
-                    style={{maxWidth: `100%`}}
-                    aria-hidden="true"
-                  />
-                </a>
-              ) : (
-                <OutboundLink
-                  href={
-                    social.platform === 'Email'
-                      ? `mailto:${social.url}?subject=Awesome portfolio, I'd love to hire you!`
-                      : social.url
-                  }
-                  sx={{variant: `buttons.social`}}
-                  aria-label={`${social.platform} icon`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={
-                    social.platform === 'Email' ? `Email me!` : social.platform
-                  }
-                >
-                  <FontAwesomeIcon
-                    icon={getSocialIcon(social.platform)}
-                    sx={{maxWidth: `100%`}}
-                    style={{maxWidth: `100%`}}
-                    aria-hidden="true"
-                  />
-                </OutboundLink>
-              )}
-            </motion.li>
-          ))}
-        </motion.ul>
-        <div sx={{flex: `1 1 auto`}}>
-          <h2
+          <motion.ul
             sx={{
-              variant: `text.subheading`,
+              display: `flex`,
+              flexDirection: `column`,
+              alignItems: `center`,
+              justifyContent: `center`,
+              flex: `0 0 auto`,
+              m: 0,
+              mr: [4, 6, 7],
+              '& li': {listStyle: `none`, m: 0, mb: 20},
             }}
+            initial="hidden"
+            animate="visible"
+            variants={!hasAnimated && list}
           >
-            {data.title}
-          </h2>
-          {data._rawParagraph && (
-            <div>
-              <BlockContent blocks={data._rawParagraph || []} />
-            </div>
-          )}
-        </div>
-      </Section>
+            {data.socials.map((social, idx) => (
+              <motion.li key={`social-${idx}`} variants={item}>
+                {social.platform === `Resume` ? (
+                  <a
+                    href={social.file.asset.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{variant: `buttons.social`}}
+                    aria-label={`${social.platform} icon`}
+                    title="Download my resume"
+                  >
+                    <FontAwesomeIcon
+                      icon={getSocialIcon(social.platform)}
+                      sx={{maxWidth: `100%`}}
+                      style={{maxWidth: `100%`}}
+                      aria-hidden="true"
+                    />
+                  </a>
+                ) : (
+                  <OutboundLink
+                    href={
+                      social.platform === 'Email'
+                        ? `mailto:${social.url}?subject=Awesome portfolio, I'd love to hire you!`
+                        : social.url
+                    }
+                    sx={{variant: `buttons.social`}}
+                    aria-label={`${social.platform} icon`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={
+                      social.platform === 'Email'
+                        ? `Email me!`
+                        : social.platform
+                    }
+                  >
+                    <FontAwesomeIcon
+                      icon={getSocialIcon(social.platform)}
+                      sx={{maxWidth: `100%`}}
+                      style={{maxWidth: `100%`}}
+                      aria-hidden="true"
+                    />
+                  </OutboundLink>
+                )}
+              </motion.li>
+            ))}
+          </motion.ul>
+          <div sx={{flex: `1 1 auto`}}>
+            <h2
+              sx={{
+                variant: `text.subheading`,
+              }}
+            >
+              {data.title}
+            </h2>
+            {data._rawParagraph && (
+              <div>
+                <BlockContent blocks={data._rawParagraph || []} />
+              </div>
+            )}
+          </div>
+        </Section>
+      </motion.div>
       <Divider />
     </Wrapper>
   )

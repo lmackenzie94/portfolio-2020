@@ -14,6 +14,7 @@ const Header = ({siteTitle, fontSizeIdx}) => {
         transitionProperty: `backgroundColor`,
         transition: `0.2s ease-out`,
         position: `relative`,
+        zIndex: 10,
       }}
     >
       <Wrapper>

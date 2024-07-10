@@ -7,15 +7,19 @@ import AccordionContent from './Accordion/Content'
 import AccordionButton from './Accordion/Button'
 import AccordionContainer from './Accordion/Container'
 import './Accordion/accordion.css'
+import {motion} from 'framer-motion'
 
 const Work = ({projects}) => {
   const projectArray = projects.edges.map(({node: project}) => project)
 
   return (
     <Wrapper id="Work">
-      {/* figure out how to animate Section with Framer */}
       <Section>
-        <div>
+        <motion.div
+          initial={{opacity: 0, y: 10}}
+          animate={{opacity: 1, y: 0}}
+          transition={{delay: 0.15}}
+        >
           <h2 sx={{variant: `text.subheading`}}>Work</h2>
           <Accordion
             items={projectArray}
@@ -32,7 +36,7 @@ const Work = ({projects}) => {
             // labelkey={`title`}
             // allowMultipleOpen
           />
-        </div>
+        </motion.div>
       </Section>
     </Wrapper>
   )

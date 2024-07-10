@@ -1,10 +1,21 @@
 /** @jsx jsx */
 import {jsx} from 'theme-ui'
 import {Wrapper} from '../system'
+import {motion} from 'framer-motion'
 
 const Banner = ({text}) => {
   return (
-    <div
+    <motion.div
+      initial={{
+        y: '-110%',
+      }}
+      animate={{
+        y: 0,
+        transition: {
+          duration: 0.3,
+          delay: 1.5,
+        },
+      }}
       sx={{
         textAlign: 'center',
         bg: '#fae152',
@@ -23,7 +34,7 @@ const Banner = ({text}) => {
           {text}
         </p>
       </Wrapper>
-    </div>
+    </motion.div>
   )
 }
 
