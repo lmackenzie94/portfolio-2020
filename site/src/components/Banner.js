@@ -3,7 +3,7 @@ import {jsx} from 'theme-ui'
 import {Wrapper} from '../system'
 import {motion} from 'framer-motion'
 
-const Banner = ({text}) => {
+const Banner = ({children}) => {
   return (
     <motion.div
       initial={{
@@ -23,18 +23,7 @@ const Banner = ({text}) => {
         py: 1,
       }}
     >
-      <Wrapper>
-        <p
-          sx={{
-            mb: 0,
-            fontWeight: 'bold',
-            fontFamily: 'heading',
-            color: 'black',
-          }}
-        >
-          {text}
-        </p>
-      </Wrapper>
+      <Wrapper>{children}</Wrapper>
     </motion.div>
   )
 }

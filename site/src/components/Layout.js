@@ -92,7 +92,28 @@ const Layout = ({children, siteTitle}) => {
         })}
       />
       <Header siteTitle={siteTitle} />
-      <Banner text="New portfolio site coming soon! 👀" />
+      <Banner>
+        <p
+          sx={{
+            mb: 0,
+            fontWeight: 'bold',
+            fontFamily: 'heading',
+            color: 'black',
+          }}
+        >
+          New portfolio site is in the works{' '}
+          <span sx={{color: 'primary'}}>@</span>{' '}
+          <a
+            href="https://lukemackenzie.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{color: 'black'}}
+          >
+            lukemackenzie.dev
+          </a>
+          {' 👀'}
+        </p>
+      </Banner>
       <AccessibilityPanel
         setFontSizeIdx={setFontSizeIdx}
         fontSizeIdx={fontSizeIdx}
